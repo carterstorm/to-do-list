@@ -1,46 +1,47 @@
-
     const tasks = [];
 
-    const addNewTask = (newTask) => {
-
-        if (newTask === "") {
-            return;
-        }
-
+    const addNewTask = (newTaskContent) => {
         tasks.push(
             {
-                content: newTask,
-                done: false,
+                content: newTaskContent,
             });
+        render();
+    };
+
+    const render = () => {
+
+        let htmlElement = "";
+
+        for (const task of tasks) {
+            htmlElement += `
+                <li class="list__item">
+                    <button class="list__button toogleDoneButton"></button>
+                    <p>${task.content}</p>
+                    <button class="list__button removeButton material-icons">delete</button>
+                </li>
+            `;
+        }
+        document.querySelector(".js-list").innerHTML = htmlElement;
     };
 
     const init = () => {
+
+        render();
 
         const formElement = document.querySelector(".js-form");
         
         formElement.addEventListener("submit", (event)=> {
             event.preventDefault();
 
-            const newTask = document.querySelector(".js-newTask").value.trim();
+            const newTask = document.querySelector(".js-newTask")
+            const newTaskContent = newTask.value.trim();
 
-            addNewTask(newTask);
-
-            const render = () => {
-                let htmlElement = `
-                <li class="list__item">
-                    <button class="list__button toogleDoneButton"></button>
-                    <p>${newTask}</p>
-                    <button class="list__button removeButton material-icons">delete</button>
-                </li>
-                `;
-        
-                const listElement = document.querySelector(".js-list");
-                listElement.innerHTML += htmlElement;
-            };
-        
-            render();
+            if (newTaskContent !== "") {
+                addNewTask(newTaskContent);
+                newTask.value = "";
+            }
+            newTask.focus();
         })
     };
 
     init();
-
