@@ -1,0 +1,10 @@
+.section {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 2px solid #eee;
+    box-shadow: 7px 22px 58px -49px rgba(66, 68, 90, 1);
+}
+
+.section--border {
+    border: none;
+}

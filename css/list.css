@@ -1,0 +1,21 @@
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list__item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 35px 1fr 35px;
+    gap: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.list__button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 35px;
+    cursor: pointer;
+}
