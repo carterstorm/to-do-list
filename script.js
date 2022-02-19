@@ -1,3 +1,4 @@
+{
     const tasks = [];
 
     const addNewTask = (newTaskContent) => {
@@ -8,44 +9,57 @@
         render();
     };
 
-    const addDeleteEvents = () => {
+    const toogleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    }
+
+    const deleteTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
+        render();
+    }  
+
+    const addDeleteButtonEvents = () => {
         const removeButtons = document.querySelectorAll(".js-removeButton");
 
-        removeButtons.forEach((removeButton, index)=> {
+        removeButtons.forEach((removeButton, taskIndex)=> {
             removeButton.addEventListener("click", () => {
-                tasks.splice(index, 1);
-                render();
+                deleteTask(taskIndex);
             })
         })
     }
 
-    const addToogleDoneEvents = () => {
+    const addToogleDoneButtonEvents = () => {
         const toogleDoneButtons = document.querySelectorAll(".js-toogleDoneButton");
 
-        toogleDoneButtons.forEach((toogleDoneButton, index)=> {
+        toogleDoneButtons.forEach((toogleDoneButton, taskIndex)=> {
             toogleDoneButton.addEventListener("click", () => {
-                tasks[index].done = !tasks[index].done;
-                render();
+                toogleTaskDone(taskIndex);
             })
         })
     }
 
     const render = () => {
-        let htmlElement = "";
+        let taskListHtmlElement = "";
 
         for (const task of tasks) {
-            htmlElement += `
+            taskListHtmlElement += 
+            `
                 <li class="list__item">
-                    <button class="list__button list__button--done js-toogleDoneButton material-icons">${task.done ? "done" : ""}</button>
-                    <p class="list__task">${task.content}</p>
+                    <button class="list__button list__button--done js-toogleDoneButton material-icons">
+                        ${task.done ? "done" : ""}
+                    </button>
+                    <p class="list__task ${task.done ? "list__task--done" : ""}">
+                        ${task.content}
+                    </p>
                     <button class="list__button list__button--remove js-removeButton material-icons">delete</button>
                 </li>
             `;
         }
-        document.querySelector(".js-list").innerHTML = htmlElement;
+        document.querySelector(".js-list").innerHTML = taskListHtmlElement;
 
-        addDeleteEvents();
-        addToogleDoneEvents();
+        addDeleteButtonEvents();
+        addToogleDoneButtonEvents();
     };
 
     const onFormSubmit = (event) => {
@@ -69,3 +83,4 @@
     };
 
     init();
+}

@@ -48,3 +48,8 @@
 .list__task {
     margin: 0;
 }
+
+.list__task--done {
+    text-decoration: line-through;
+    color: red;
+}
