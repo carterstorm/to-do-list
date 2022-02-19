@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="css/section.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/list.css">
-    <link rel="stylesheet" href="css/removeButton.css">
-    <link rel="stylesheet" href="css/toogleDoneButton.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,20 +21,24 @@
     <script defer src="script.js"></script>
 </head>
 <body class="body">
-    <div class="container">
+    <main class="container">
         <h1>To-do list</h1>
         <section class="section">
             <h2 class="section__header">Add a new task</h2>
-            <form class="form js-form">
-                <input class="form__input js-newTask" type="text" placeholder="Type here what are you gonna do?">
-                <button class="form__button">Add task</button>
-            </form>
+            <div class="section__body">
+                <form class="form js-form">
+                    <input class="form__input js-newTask" type="text" placeholder="Type here what are you gonna do?">
+                    <button class="form__button">Add task</button>
+                </form>
+            </div>
         </section>
-        <section class="section section--border">
+        <section class="section">
             <h2 class="section__header">What you need to do:</h2>
-            <ul class="list js-list">
-            </ul>
+            <div class="section__body">
+                <ul class="list js-list">
+                </ul>
+            </div>
         </section>
-    </div>
+    </main>
 </body>
 </html>

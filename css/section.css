@@ -1,10 +1,15 @@
 .section {
     background-color: #fff;
-    padding: 20px;
-    border-bottom: 2px solid #eee;
+    margin-bottom: 5px;
     box-shadow: 7px 22px 58px -49px rgba(66, 68, 90, 1);
 }
 
-.section--border {
-    border: none;
+.section__header {
+    padding: 25px;
+    margin: 0;
+    border-bottom: 2px solid #eee;
+}
+
+.section__body {
+    padding: 25px;
 }

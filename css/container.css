@@ -1,5 +1,4 @@
 .container {
     flex-basis: 750px;
-    max-width: 750px;
-    margin: 0 20px;
+    padding: 20px;
 }

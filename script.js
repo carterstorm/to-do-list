@@ -36,9 +36,9 @@
         for (const task of tasks) {
             htmlElement += `
                 <li class="list__item">
-                    <button class="list__button toogleDoneButton js-toogleDoneButton material-icons">${task.done ? "done" : ""}</button>
-                    <p>${task.content}</p>
-                    <button class="list__button removeButton js-removeButton material-icons">delete</button>
+                    <button class="list__button list__button--done js-toogleDoneButton material-icons">${task.done ? "done" : ""}</button>
+                    <p class="list__task">${task.content}</p>
+                    <button class="list__button list__button--remove js-removeButton material-icons">delete</button>
                 </li>
             `;
         }

@@ -1,19 +1,19 @@
 .form {
     display: grid;
-    grid-template-columns: 1fr 200px;
-    grid-template-rows: 35px;
+    grid-template-columns: 1fr auto;
     gap: 20px;
 }
 
 @media (max-width: 600px) {
     .form {
         grid-template-columns: 1fr;
-        grid-template-rows: 35px 35px;
+        grid-template-rows: 30px 30px;
     }
 }
 
 .form__input {
-    padding: 5px 15px;
+    height: 30px;
+    padding: 0 15px;
     border-radius: 5px;
     border: 1px solid #aaa;
 }
@@ -23,11 +23,20 @@
     font-weight: 200;
 }
 
-
 .form__button {
-    background-color: teal;
-    color: white;
     border: none;
     border-radius: 5px;
+    padding: 0 60px;
+    background-color: teal;
+    color: #fff;
     cursor: pointer;
+    transition: .2s;
+}
+
+.form__button:hover {
+    background-color: rgb(1, 161, 161);
+}
+
+.form__button:active {
+    background-color: rgb(4, 204, 204);
 }
