@@ -1,0 +1,17 @@
+.button {
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+    height: 30px;
+}
+
+.button:hover {
+    background-color: rgb(1, 161, 161);
+}
+
+.button:active {
+    background-color: rgb(4, 204, 204);
+}
