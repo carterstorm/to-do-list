@@ -1,13 +1,12 @@
 .form {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 200px;
     gap: 20px;
 }
 
 @media (max-width: 600px) {
     .form {
         grid-template-columns: 1fr;
-        grid-template-rows: 30px 30px;
     }
 }
 
@@ -21,22 +20,4 @@
 .form__input::placeholder {
     color: #ccc;
     font-weight: 200;
-}
-
-.form__button {
-    border: none;
-    border-radius: 5px;
-    padding: 0 60px;
-    background-color: teal;
-    color: #fff;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.form__button:hover {
-    background-color: rgb(1, 161, 161);
-}
-
-.form__button:active {
-    background-color: rgb(4, 204, 204);
 }
