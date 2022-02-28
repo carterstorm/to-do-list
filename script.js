@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideTaskButtons = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -46,7 +47,7 @@
         })
     }
 
-    const render = () => {
+    const renderTasks = () => {
         let taskListHtmlElement = "";
 
         for (const task of tasks) {
@@ -64,7 +65,26 @@
             `;
         }
         document.querySelector(".js-list").innerHTML = taskListHtmlElement;
+    }
 
+    const renderButtons = () => {
+        if (tasks.length !== 0) {
+            hideTaskButtons = true;
+        } else {
+            hideTaskButtons = false;
+        }
+
+        let tasksButtons = `
+            <button class="button">${hideTaskButtons ? "Pokaz" : "Ukryj"} ukończone</button>
+            <button class="button">Ukończ wszystkie</button>
+        `;
+
+        document.querySelector(".js-section__buttons").innerHTML = tasksButtons;
+    }
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
         addDeleteButtonEvents();
         addToogleDoneButtonEvents();
     };
@@ -86,7 +106,9 @@
     const init = () => {
 
         const formElement = document.querySelector(".js-form");
-        formElement.addEventListener("submit", onFormSubmit)
+        formElement.addEventListener("submit", onFormSubmit);
+        renderTasks();
+        renderButtons();
     };
 
     init();
