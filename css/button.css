@@ -6,6 +6,7 @@
     cursor: pointer;
     transition: .2s;
     height: 30px;
+    min-width: 120px;
 }
 
 .button:hover {
@@ -14,4 +15,9 @@
 
 .button:active {
     background-color: rgb(4, 204, 204);
+}
+
+button:disabled, button:disabled:hover {
+    background-color: #ccc;
+    cursor:auto;
 }

@@ -12,6 +12,10 @@
     border-bottom: 1px solid #eee;
 }
 
+.list__item--hidden {
+    display: none;
+}
+
 .list__button {
     border: none;
     border-radius: 5px;
@@ -20,6 +24,7 @@
     cursor: pointer;
     transition: .2s;
 }
+
 
 .list__button--done {  
     background-color: rgb(39, 189, 1);
